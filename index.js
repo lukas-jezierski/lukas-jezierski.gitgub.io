@@ -24,9 +24,12 @@ button.addEventListener('click', () => {
     })
       .then(res => res.json())
       .then(({ data }) => {
+        console.log(data);
+        /*
         const countries = data.countries;
         const countryList = countries.map(country => `<li>${country.name} (${country.code})</li>`).join('');
         const outputHTML = `<ul>${countryList}</ul>`;
         outputDiv.innerHTML = outputHTML;
+        */
       });
   });
