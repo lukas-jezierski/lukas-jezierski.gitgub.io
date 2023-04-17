@@ -12,7 +12,6 @@ button.addEventListener('click', () => {
         query: `
           query {
             continents {
-              code
               name
             }
           }
