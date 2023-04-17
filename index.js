@@ -13,7 +13,7 @@ button.addEventListener('click', () => {
           query {
               continents {
                 name
-                countries {
+                countries(first: 5) {
                   name
                   code
                 }
