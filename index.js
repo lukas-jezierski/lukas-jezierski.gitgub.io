@@ -11,10 +11,14 @@ button.addEventListener('click', () => {
       body: JSON.stringify({
         query: `
           query {
-            continents {
-              name
+              continents {
+                name
+                countries {
+                  name
+                  code
+                }
+              }
             }
-          }
         `,
       }),
     })
