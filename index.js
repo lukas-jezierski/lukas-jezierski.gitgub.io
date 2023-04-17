@@ -14,9 +14,6 @@ button.addEventListener('click', () => {
             continents {
               code
               name
-              countries {
-                name
-              }
             }
           }
         `,
