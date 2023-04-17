@@ -11,11 +11,18 @@ button.addEventListener('click', () => {
       body: JSON.stringify({
         query: `
           query {
-              continents {
-                name
-                countries(first: 5) {
+              continents(filter: {
+                code: {
+                  eq: "NA"
+                }
+              }) {
+                name,
+                code
+                countries{
                   name
                   code
+                  awsRegion
+                  phone
                 }
               }
             }
@@ -23,7 +30,10 @@ button.addEventListener('click', () => {
       }),
     })
       .then(res => res.json())
-      .then(({ data }) => {
+      .then(({ data, errors }) => {
+        if(errors){
+            console.log(errors);
+        }
         console.log(data);
         /*
         const countries = data.countries;
